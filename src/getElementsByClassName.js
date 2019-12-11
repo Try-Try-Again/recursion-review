@@ -7,7 +7,7 @@ var getElementsByClassName = function(className) {
   var body = document.body;
   var nodesWithClass = [];
 
-  function searchNodes(nodes) {
+  var searchNodes = function(nodes) {
 
     var children = nodes.childNodes;
     if (nodes.classList && nodes.classList.contains(className) ) {
@@ -19,7 +19,7 @@ var getElementsByClassName = function(className) {
       var node = children[i];
       searchNodes(node);
     }
-  }
+  };
 
   searchNodes(body);
   return nodesWithClass;
